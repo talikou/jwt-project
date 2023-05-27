@@ -8,9 +8,9 @@ export const PasswordInputTheme: ThemeComponent = {
       height: '42px',
       border: `1px solid ${theme.colors.gray[4]}`,
       borderRadius: '8px',
-      background: theme.colors.gray[0],
+      background: theme.colors.gray[2],
       ':focus': {
-        background: theme.colors.gray[1],
+        background: theme.colors.gray[3],
       },
     },
     innerInput: {

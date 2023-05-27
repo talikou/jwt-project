@@ -1,3 +1,2 @@
-import { Paper as MantinePaper } from '@mantine/core'
-
-export const Paper = MantinePaper
+export { Paper } from './Paper'
+export { PaperTheme } from './Paper.theme'
