@@ -5,3 +5,5 @@ export interface AuthResponse {
   refreshToken: string
   user: IUser
 }
+
+export type RefreshResponse = Omit<AuthResponse, 'user'>

@@ -13,13 +13,13 @@ export function registration(
   email: string,
   password: string
 ): Promise<AxiosResponse<AuthResponse>> {
-  return $api.post('/registration', { email, password })
+  return $api.post('/api/registration', { email, password })
 }
 
 export function logout(): Promise<void> {
-  return $api.post('/logout')
+  return $api.post('/api/logout')
 }
 
 export function fetchUsers(): Promise<AxiosResponse<IUser[]>> {
-  return $api.get('/users')
+  return $api.get('/api/users')
 }

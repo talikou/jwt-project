@@ -10,13 +10,9 @@ export const Layout = ({ children }: LayoutProps) => (
     w="100%"
     h="100%"
     justify="center"
+    p={30}
     sx={() => ({ flexGrow: 1 })}
   >
     {children}
   </Flex>
 )
-
-
-
-
-

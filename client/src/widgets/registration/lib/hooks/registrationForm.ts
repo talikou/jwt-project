@@ -1,14 +1,14 @@
 import { isEmail, useForm, UseFormReturnType } from '@mantine/form'
 import { useNavigate } from 'react-router-dom'
 import { useUserStore } from 'entities/user'
-import { login } from 'shared/api/rest/routes'
+import { registration } from 'shared/api/rest/routes'
 
 export interface FormValues {
   email: string
   password: string
 }
 
-export const useLoginForm = (): [
+export const useRegistrationForm = (): [
   UseFormReturnType<FormValues>,
   (values: ReturnType<(values: FormValues) => FormValues>) => void
 ] => {
@@ -29,14 +29,14 @@ export const useLoginForm = (): [
 
   const onSubmit = (values: FormValues) => {
     const { email, password } = values
-    login(email, password)
+    registration(email, password)
       .then(({ data }) => {
         localStorage.setItem('token', data.accessToken)
         setUser(data.user)
-        navigate('/home')
+        navigate('/')
       })
-      .catch(() => {
-        form.setFieldError('email', 'Неверный логин или пароль')
+      .catch((e) => {
+        console.log(e)
       })
   }
 

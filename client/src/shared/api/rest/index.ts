@@ -1,4 +1,13 @@
 import axios from 'axios'
+import { AuthResponse } from 'shared/types'
+
+export const refresh = (token: string) => {
+  return axios.post<AuthResponse>(
+    '/api/refresh',
+    { refresh: token },
+    { withCredentials: true }
+  )
+}
 
 const $api = axios.create({
   withCredentials: true,

@@ -6,21 +6,20 @@ export const Login = () => {
 
   return (
     <Paper
+      w="100%"
       p={30}
       radius={10}
       component="form"
       onSubmit={form.onSubmit((values) => onSubmit(values))}
       sx={{
         gap: '20px',
-        width: '400px',
-        height: '250px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
       }}
     >
-      <TextInput {...form.getInputProps('email')} />
-      <PasswordInput {...form.getInputProps('password')} />
+      <TextInput label="Логин" {...form.getInputProps('email')} />
+      <PasswordInput label="Пароль" {...form.getInputProps('password')} />
 
       <Button type="submit" w="85px" sx={{ alignSelf: 'center' }}>
         Войти
