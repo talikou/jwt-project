@@ -33,7 +33,7 @@ export const useRegistrationForm = (): [
       .then(({ data }) => {
         localStorage.setItem('token', data.accessToken)
         setUser(data.user)
-        navigate('/')
+        navigate('/home')
       })
       .catch((e) => {
         console.log(e)

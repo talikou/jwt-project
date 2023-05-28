@@ -22,7 +22,7 @@ const ProtectedRoute = ({ children }: IProtectedRoute) => {
       navigate('/')
       setUser({} as IUser)
     } else if (!loading) {
-      refresh(token)
+      refresh()
         .then(({ data }) => {
           localStorage.setItem('token', data.accessToken)
           setUser(data.user)

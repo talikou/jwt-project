@@ -21,5 +21,5 @@ export function logout(): Promise<void> {
 }
 
 export function fetchUsers(): Promise<AxiosResponse<IUser[]>> {
-  return $api.get('/api/users')
+  return $api.get<IUser[]>('/api/users')
 }
